@@ -1,0 +1,71 @@
+{% extends './base.html' %}
+
+{% block title %} Lista {% endblock %}
+
+{% block customCSS %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/layout.css')}}">
+{% endblock %}
+
+{% block content %}
+<div class="row">
+  <H1 style="color: #FFFFFF;"align="center">
+    Lista de Trabajo Cobranza
+  </H1>
+</div>
+
+<div class="row">
+  <br>
+  <br>
+</div>
+
+
+<div>
+  <form action="/home" method="POST">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/> 
+    <table border="1|0" style="background-color: whitesmoke"; align="center">
+      <tr class="ewTableHeader">
+        <thead style="color: #1B2E5C;"align="center">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">No Contrato</th>
+            <th scope="col">Razón Social</th>
+            <th scope="col">Bucket</th>
+            <th scope="col">Saldo</th>
+            <th scope="col">Atrasado</th>
+          <!-- <th scope="col">Acción</th> -->
+          </tr>
+        </thead>
+          <tbody>
+            <tr align="center">
+            <th scope="row">1</th>
+            <td>C5547CC6120</td>
+            <td>JUAN CHAVEZ</td>
+            <td>1-14 DPD</td>
+            <td>$1,000,151.00</td>
+            <td>$1,000,151.00</td>
+            <td><button type="submit" class="btn btn-primary-center">Ir</button></td>
+            </tr>
+            <tr style="color: black;"align="center">
+            <th scope="row">2</th>
+            <td>C5547CC6120</td>
+            <td>POLYGON</td>
+            <td>0 DPD</td>
+            <td>$3,000,000.00</td>
+            <td>$3,000,000.00</td>
+            <td><button type="submit" class="btn btn-primary-center">Ir</button></td>
+            </tr>
+            <tr align="center">
+            <th scope="row">3</th>
+            <td>C5547CC6120</td>
+            <td>PINGUINOS SOVIETICOS</td>
+            <td>1-14 DPD</td>
+            <td>$300,151.00</td>
+            <td>$300,151.00</td>
+            <td><button type="submit" class="btn btn-primary-center">Ir</button></td>
+            </tr>
+          </tbody>
+      </tr>
+    </table>
+  </form>
+</div> 
+{% endblock %}

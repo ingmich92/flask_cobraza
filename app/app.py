@@ -42,13 +42,20 @@ def home():
     else:
         return "<p>Bye, World!</p>"
 
-@app.route('/<username>') #URL tabla trabajo
-def params (username):
-    data= {
-        'titulo':'Gestor Cobranza - creze',
-        'bienvenido':'Cobranza'
-     }   
-    return render_template ('index_usuario.html',data=data) ##Regreso nuevo y diccionario data    
+# @app.route('/<username>') #URL tabla trabajo
+# def params (username):
+#     data= {
+#         'titulo':'Gestor Cobranza - creze',
+#         'bienvenido':'Cobranza'
+#      }   
+#     return render_template ('index_usuario.html',data=data) ##Regreso nuevo y diccionario data    
+
+@app.route('/list' , methods=['GET', 'POST'])
+def params ():
+    if request.method == 'POST':
+        return render_template ('index_usuario.html') 
+    else:
+        return "<p>Bye, World!</p>"
 
 
 @app.before_request

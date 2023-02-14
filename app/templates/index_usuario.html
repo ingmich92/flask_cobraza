@@ -20,7 +20,7 @@
 
 
 <div>
-  <form action="/home" method="POST">
+  <!-- <form action="/home" method="POST">
     <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/> 
     <table border="1|0" style="background-color: whitesmoke"; align="center">
       <tr class="ewTableHeader">
@@ -31,9 +31,9 @@
             <th scope="col">Razón Social</th>
             <th scope="col">Bucket</th>
             <th scope="col">Saldo</th>
-            <th scope="col">Atrasado</th>
+            <th scope="col">Atrasado</th> -->
           <!-- <th scope="col">Acción</th> -->
-          </tr>
+          <!-- </tr>
         </thead>
           <tbody>
             <tr align="center">
@@ -67,5 +67,53 @@
       </tr>
     </table>
   </form>
-</div> 
+</div>  -->
+
+<!-- style="background-color:#ffffff; border:1px solid black;" -->
+<form action="/home" method="POST">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/> 
+  <table class="table table-bordered table-dark">
+    <thead>
+      <tr align="center">
+        <th scope="col">#</th>
+        <th scope="col">No Contrato</th>
+        <th scope="col">Razon Social</th>
+        <th scope="col">Bucket</th>
+        <th scope="col">Saldo</th>
+        <th scope="col">Atrasado</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr align="center">
+        <tr align="center">
+          <th scope="row">1</th>
+          <td>C5547CC6120</td>
+          <td>JUAN CHAVEZ</td>
+          <td>1-14 DPD</td>
+          <td>$1,000,151.00</td>
+          <td>$1,000,151.00</td>
+          <td><button type="submit" class="btn btn-primary-center" style="color: #FFFFFF; background-color: rgb(21, 255, 0);">Ir</button></td>
+      </tr>
+      <tr align="center">
+          <th scope="row">2</th>
+          <td>C5547CC6120</td>
+          <td>POLYGON</td>
+          <td>0 DPD</td>
+          <td>$3,000,000.00</td>
+          <td>$3,000,000.00</td>
+          <td><button type="submit" class="btn btn-primary-center" style="color: #FFFFFF; background-color: rgb(21, 255, 0);">Ir</button></td>
+      </tr>
+      <tr align="center">
+        <th scope="row">3</th>
+        <td>C5547CC6120</td>
+        <td>PINGUINOS SOVIETICOS</td>
+        <td>1-14 DPD</td>
+        <td>$300,151.00</td>
+        <td>$300,151.00</td>
+          <td><button type="submit" class="btn btn-primary-center" style="color: #FFFFFF; background-color: rgb(21, 255, 0);">Ir</button></td>
+      </tr>
+    </tbody>
+  </table>
+</form>
 {% endblock %}

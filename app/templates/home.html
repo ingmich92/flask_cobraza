@@ -10,7 +10,6 @@
 <body >
   <div class="container">
     <main>
-      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>  
       <div class="py-5 text-center">
         <img class="d-block mx-auto mb-4" src="{{ url_for('static', filename='img/creze.png')}}" alt="" width="230" height="130">
         <h2 style="color: #FFFFFF;">Ejecutivo : caguilar@creze.com </h2>
@@ -49,6 +48,8 @@
     </div>
     <br>
 
+    <form action="/list" method="POST">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/> 
         <div>
           <label for="medio-loc" style="color: #FFFFFF;">Medio de Localizacion</label>
           <select class="form-select" aria-label="Default select example">
@@ -117,7 +118,10 @@
           <button class="w-100 btn btn-primary btn-lg" type="submit">Enviar</button>
         </div>
         </div>
+      </form>
     </main>
+
+    <br>Elapsed time: {{ g.request_time() }}</br>
     
       <footer class="my-5 pt-5 text-muted text-center text-small">
         <p class="mb-1" style="color: #FFFFFF;">&copy; 2017–2023 Creze</p>

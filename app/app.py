@@ -37,7 +37,7 @@ def home():
         # data= {
         # 'titulo':'Gestor Cobranza - creze',
         # 'bienvenido':'Cobranza'
-        # }   
+        # } 
         return render_template ('home.html') ##Regreso nuevo y diccionario data
     else:
         return "<p>Bye, World!</p>"

@@ -7,6 +7,7 @@
 {% endblock %}
 
 {% block content %}
+
 <div class="row">
   <H1 style="color: #FFFFFF;"align="center">
     Lista de Trabajo Cobranza
@@ -72,7 +73,7 @@
 <!-- style="background-color:#ffffff; border:1px solid black;" -->
 <form action="/home" method="POST">
   <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/> 
-  <table class="table table-bordered table-dark">
+  <table class="table table-bordered table-dark" id="tableWork">
     <thead>
       <tr align="center">
         <th scope="col">#</th>
@@ -85,14 +86,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr align="center">
         <tr align="center">
           <th scope="row">1</th>
           <td>C5547CC6120</td>
           <td>JUAN CHAVEZ</td>
           <td>1-14 DPD</td>
           <td>$1,000,151.00</td>
-          <td>$1,000,151.00</td>
+          <td>$2,000,151.00</td>
           <td><button type="submit" class="btn btn-primary-center" style="color: #FFFFFF; background-color: rgb(21, 255, 0);">Ir</button></td>
       </tr>
       <tr align="center">
@@ -116,4 +116,6 @@
     </tbody>
   </table>
 </form>
+
+<script src="{{ url_for('static', filename='js/getData.js')}}"></script>
 {% endblock %}

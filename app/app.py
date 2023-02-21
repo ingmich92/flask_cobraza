@@ -15,48 +15,23 @@ csrf = CSRFProtect(app)
 # def hello():
 #     return "<p>Hello, World!</p>"
 
-@app.route('/')
+@app.route('/') #Ruta home que muestra el login
 def index():
     return render_template('login.html')
 
-@app.route('/login', methods=['GET', 'POST'])
+@app.route('/list', methods=['GET', 'POST']) #Ruta que nos muestra la lista del trabajo
 def login():
     if request.method == 'POST':
-        # print(request.form['username']) 
-        # print(request.form['password'])
-        # user = request.form['username']
-        # password = request.form['password']
-        # datos.append({"email":user, "contraseña": password})
         return render_template ('index_usuario.html')
     else:
         return "<p>Bye, World!</p>"
 
-@app.route('/home', methods=['GET', 'POST']) #URL raíz usuario-credito
+@app.route('/home', methods=['GET', 'POST']) #Ruta que nos envie al home del usuario
 def home():
     if request.method == 'POST':
-        # data= {
-        # 'titulo':'Gestor Cobranza - creze',
-        # 'bienvenido':'Cobranza'
-        # } 
-        return render_template ('home.html') ##Regreso nuevo y diccionario data
+        return render_template ('home.html') 
     else:
         return "<p>Bye, World!</p>"
-
-# @app.route('/<username>') #URL tabla trabajo
-# def params (username):
-#     data= {
-#         'titulo':'Gestor Cobranza - creze',
-#         'bienvenido':'Cobranza'
-#      }   
-#     return render_template ('index_usuario.html',data=data) ##Regreso nuevo y diccionario data    
-
-@app.route('/list' , methods=['GET', 'POST'])
-def params ():
-    if request.method == 'POST':
-        return render_template ('index_usuario.html') 
-    else:
-        return "<p>Bye, World!</p>"
-
 
 @app.before_request
 def before_request():
